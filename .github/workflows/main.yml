@@ -19,15 +19,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Set up Pages
-        uses: actions/configure-pages@v1
+        uses: actions/configure-pages@v2
       - name: Set up Swift
-        uses: swift-actions/setup-swift@v2
+        uses: swift-actions/setup-swift@v1
         with:
           swift-version: '5.8.0'
       - name: Generate Docs
-        uses: fwcd/swift-docc-action@v1
+        uses: fwcd/swift-docc-action@v2
         with:
           target: NIOSSH
           output: ./public
@@ -35,7 +35,7 @@ jobs:
           disable-indexing: 'true'
           hosting-base-path: swift-nio-ssh
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v2
         with:
           path: ./public
 
@@ -48,4 +48,4 @@ jobs:
 
     steps:
       - name: Deploy Docs
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v2
