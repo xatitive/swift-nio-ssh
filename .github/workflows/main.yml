@@ -33,9 +33,9 @@ jobs:
           output: ./public
           transform-for-static-hosting: 'true'
           disable-indexing: 'true'
-          hosting-base-path: /
+          hosting-base-path: ''
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@3
+        uses: actions/upload-pages-artifact@2
         with:
           path: ./public
 
