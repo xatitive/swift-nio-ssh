@@ -33,7 +33,7 @@ jobs:
           output: ./public
           transform-for-static-hosting: 'true'
           disable-indexing: 'true'
-          hosting-base-path: ''
+          hosting-base-path: '/'
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
