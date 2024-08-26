@@ -30,14 +30,13 @@ jobs:
         uses: fwcd/swift-docc-action@v1
         with:
           target: NIOSSH
-          output: ./public
+          output: ./docs
           transform-for-static-hosting: 'true'
           disable-indexing: 'true'
-          hosting-base-path: swift-nio-ssh
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: ./public
+          path: ./docs
 
   deploy:
     runs-on: ubuntu-latest
