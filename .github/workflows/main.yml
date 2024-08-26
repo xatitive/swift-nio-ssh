@@ -34,7 +34,7 @@ jobs:
           transform-for-static-hosting: 'true'
           disable-indexing: 'true'
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./docs
 
@@ -47,4 +47,4 @@ jobs:
 
     steps:
       - name: Deploy Docs
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
