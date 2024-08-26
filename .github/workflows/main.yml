@@ -23,11 +23,11 @@ jobs:
       - name: Set up Pages
         uses: actions/configure-pages@v2
       - name: Set up Swift
-        uses: swift-actions/setup-swift@v1
+        uses: swift-actions/setup-swift@v2
         with:
           swift-version: '5.8.0'
       - name: Generate Docs
-        uses: fwcd/swift-docc-action@v2
+        uses: fwcd/swift-docc-action@v1
         with:
           target: NIOSSH
           output: ./public
