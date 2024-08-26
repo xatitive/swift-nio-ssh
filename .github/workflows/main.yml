@@ -35,7 +35,7 @@ jobs:
           disable-indexing: 'true'
           hosting-base-path: /
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@3
         with:
           path: ./public
 
@@ -48,4 +48,4 @@ jobs:
 
     steps:
       - name: Deploy Docs
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
