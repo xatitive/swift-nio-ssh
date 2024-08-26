@@ -33,7 +33,7 @@ jobs:
           output: ./public
           transform-for-static-hosting: 'true'
           disable-indexing: 'true'
-          hosting-base-path: swift-nio-ssh
+          hosting-base-path: /
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
