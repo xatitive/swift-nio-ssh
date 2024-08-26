@@ -27,11 +27,17 @@ jobs:
         with:
           swift-version: '5.10'
       - name: Generate Docs
-        run: swift package --allow-writing-to-directory ./docs generate-documentation --target NIOSSH --transform-for-static-hosting --disable-indexing --output-path ./docs
-      - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: fwcd/swift-docc-action@v1
         with:
-          path: ./docs
+          target: NIOSSH
+          output: ./public
+          transform-for-static-hosting: 'true'
+          disable-indexing: 'true'
+          hosting-base-path: swift-nio-ssh
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./public
 
   deploy:
     runs-on: ubuntu-latest
@@ -42,4 +48,4 @@ jobs:
 
     steps:
       - name: Deploy Docs
-        uses: actions/deploy-pages@v3
+        uses: actions/deploy-pages@v2
